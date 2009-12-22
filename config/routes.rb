@@ -30,6 +30,12 @@ ActionController::Routing::Routes.draw do |map|
   #     admin.resources :products
   #   end
 
+  # api
+  map.namespace :api do |api|
+    api.connect 'account/verify_credentials', :controller => "welcome", :action => "index"
+    api.connect 'account/verify_credentials.:format', :controller => "welcome", :action => "index"
+  end
+
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   map.root :controller => "welcome"
   map.oauth_callback 'oauth_callback', :controller => "welcome", :action => "oauth_callback"
