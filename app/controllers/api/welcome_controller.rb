@@ -1,9 +1,9 @@
 class Api::WelcomeController < ApplicationController
   
   def index
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => {:a => "a"} }
+    logger.info { "request: #{request.path}" }
+    authenticate_with_http_basic do |username, password|
+      logger.info { "http basic username: #{username}\nhttp basic password: #{password}" }
     end
   end
   

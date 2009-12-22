@@ -297,3 +297,11 @@ Rendering rescues/layout (not_found)
 
 Processing Api::WelcomeController#index to xml (for 127.0.0.1 at 2009-12-23 01:13:21) [GET]
 Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/api/account/verify_credentials.xml]
+
+
+Processing Api::WelcomeController#index (for 127.0.0.1 at 2009-12-23 01:28:34) [GET]
+
+ActionView::MissingTemplate (Missing template api/welcome/index.erb in view path app/views):
+  app/controllers/api/welcome_controller.rb:4:in `index'
+
+Rendering rescues/layout (internal_server_error)
