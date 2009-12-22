@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
         
         return if request.path.gsub("/", "") == "oauth_callback"
         
-        request_token = @client.request_token
+        request_token = @client.request_token(:oauth_callback => "http://" + request.host + ":" + request.port + "/oauth_callback")
         session[:request_token] = request_token.token
         session[:request_token_secret] = request_token.secret
         @authorize_url = request_token.authorize_url
