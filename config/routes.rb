@@ -41,7 +41,7 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => "welcome"
   map.oauth_callback 'oauth_callback', :controller => "welcome", :action => "oauth_callback"
   
-  map.connect 'api/*ori', :controller => "tapi/welcome", :action => "index"
+  map.connect 'api/*ori', :controller => "tapi/welcome", :action => "dispatch"
 
   # See how all your routes lay out with "rake routes"
 
