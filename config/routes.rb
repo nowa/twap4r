@@ -31,15 +31,17 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   # api
-  map.namespace :tapi do |tapi|
-    tapi.dispatch 'dispatch', :controller => "welcome", :action => "index"
-    # api.connect 'account/verify_credentials', :controller => "welcome", :action => "index"
-    # api.connect 'account/verify_credentials.:format', :controller => "welcome", :action => "index"
-  end
+  # map.namespace :tapi do |tapi|
+  #   tapi.dispatch 'dispatch', :controller => "welcome", :action => "index"
+  #   # api.connect 'account/verify_credentials', :controller => "welcome", :action => "index"
+  #   # api.connect 'account/verify_credentials.:format', :controller => "welcome", :action => "index"
+  # end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   map.root :controller => "welcome"
   map.oauth_callback 'oauth_callback', :controller => "welcome", :action => "oauth_callback"
+  
+  map.connect 'api/*ori', :controller => "tapi/welcome", :action => "index"
 
   # See how all your routes lay out with "rake routes"
 

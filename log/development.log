@@ -387,3 +387,11 @@ Processing Tapi::WelcomeController#index (for 127.0.0.1 at 2009-12-23 03:25:14) 
 request: /tapi/dispatch
 ori: /api/dsf/sdf?count=10
 Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/tapi/dispatch?ori=/api/dsf/sdf?count=10]
+
+
+Processing Tapi::WelcomeController#index (for 127.0.0.1 at 2009-12-23 03:58:16) [GET]
+  Parameters: {"rpath"=>["status", "a.xml"]}
+request: /api/status/a.xml
+ori: 
+result: 
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/api/status/a.xml]
