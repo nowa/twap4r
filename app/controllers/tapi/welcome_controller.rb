@@ -9,10 +9,13 @@ class Tapi::WelcomeController < ApplicationController
       if request.post?
         logger.info { "p: #{hash_to_querystring(params)}" }
         result = `curl -d "#{hash_to_querystring(params)}" http://twitter.com#{params[:ori]}`
+        logger.info { "curl: curl -d "#{hash_to_querystring(params)}" http://twitter.com#{params[:ori]}" }
       else
         result = `curl http://twitter.com#{params[:ori]}`
+        logger.info { "curl: curl http://twitter.com#{params[:ori]}" }
       end
     end
+    logger.info { "result: #{result}" }
     render :text => result
   end
   

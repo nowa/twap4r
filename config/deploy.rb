@@ -21,6 +21,10 @@ set :deploy_to, "/var/www/vhosts/#{application}/deploy"
 set :user, "root"
 set :runner, "root"
 
+task :chown, :roles => [:web, :app] do
+  sudo "chown -R nobody:nobody #{deploy_to}/current/"
+end
+
 namespace :deploy do
   task :start, :roles => :app do
     
@@ -32,3 +36,5 @@ namespace :deploy do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
 end
+
+after "deploy:symlink", :chown
