@@ -27,6 +27,7 @@ class Tapi::WelcomeController < ApplicationController
     def hash_to_querystring(hash)
       hash.delete(:action)
       hash.delete(:controller)
+      hash.delete(:ori)
       hash.keys.inject('') do |query_string, key|
         query_string << '&' unless key == hash.keys.first
         query_string << "#{URI.encode(key.to_s)}=#{URI.encode(hash[key])}"
