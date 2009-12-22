@@ -1,5 +1,7 @@
 class WelcomeController < ApplicationController
   
+  before_filter :oauth, :except => [:oauth_callback]
+  
   def index
     logger.info { "#{@client.friends_timeline}" } if @client.authorized?
   end

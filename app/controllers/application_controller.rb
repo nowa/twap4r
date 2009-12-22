@@ -10,8 +10,6 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   
-  before_filter :oauth
-  
   protected
   
     def oauth
@@ -28,8 +26,6 @@ class ApplicationController < ActionController::Base
                :consumer_key => consumer_key,
                :consumer_secret => consumer_secret
                )
-        
-        return if request.path.gsub("/", "") == "oauth_callback"
         
         request_token = @client.request_token(:oauth_callback => "http://" + request.host + ":" + request.port.to_s + "/oauth_callback")
         session[:request_token] = request_token.token
