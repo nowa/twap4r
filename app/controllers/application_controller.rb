@@ -15,17 +15,34 @@ class ApplicationController < ActionController::Base
   protected
   
     def oauth
-      twitter = TwitterOAuth::Client.new(
-            :consumer_key => 'rubLpKupoXt4JlQCiCm7Q',
-            :consumer_secret => 'KJu6pKzr1Wj1yqUffrVaPak3oLTsAlZO5IX8hmrJDM'
-      )
-      oauth_confirm_url = request.host + "/oauth_callback"
-      logger.info { "oauth_confirm_url" }
-      request_token = twitter.request_token(:oauth_callback => oauth_confirm_url)
-      access_token = request_token.authorize(
-        request_token.token,
-        request_token.secret,
-        :oauth_verifier => params[:oauth_verifier]
-      )
+      @authorized = false
+      @config_file = "#{RAILS_ROOT}/config/oauth.yml"
+      @config = YAML::load(File.read(config_file))
+      consumer_key = @config['oauth']['consumer_key']
+      consumer_secret = @config['oauth']['consumer_secret']
+      request_token = @config['oauth']['request_token']
+      request_secret = @config['oauth']['request_secret']
+      
+      if request_token.nil? and request_secret.nil?
+        @client = TwitterOAuth::Client.new(
+               :consumer_key => consumer_key,
+               :consumer_secret => consumer_secret
+               )
+        
+        return if request.path.gsub("/", "") == "oauth_callback"
+        
+        request_token = @client.request_token
+        session[:request_token] = request_token.token
+        session[:request_token_secret] = request_token.secret
+        @authorize_url = request_token.authorize_url
+      else
+        @authorized = true
+        @client = TwitterOAuth::Client.new(
+            :consumer_key => consumer_key,
+            :consumer_secret => consumer_secret,
+            :token => request_token,
+            :secret => request_secret
+          )
+      end
     end
 end

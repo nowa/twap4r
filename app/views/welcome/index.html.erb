@@ -1,5 +1,11 @@
 <h3>Twitter API Proxy For Rails</h3>
 
+<% unless @authorized %>
+<p>
+	<a href="<%=h @authorize_url %>">Click here to authorize our application.</a>
+</p>
+<% end %>
+
 <p>
 	by nowa < nowazhu[AT]gmail.com >.
 </p>
