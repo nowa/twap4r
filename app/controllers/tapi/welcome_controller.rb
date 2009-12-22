@@ -1,5 +1,7 @@
 class Tapi::WelcomeController < ApplicationController
   
+  skip_before_filter :verify_authenticity_token
+  
   def dispatch
     logger.info { "request: #{request.path}" }
     ori = params[:ori].join('/')
