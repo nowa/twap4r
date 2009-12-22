@@ -24,7 +24,7 @@ class Tapi::WelcomeController < ApplicationController
       logger.info { "curl: curl http://#{basic_auth}twitter.com/#{ori}?#{hash_to_querystring(params)}" }
     end
     
-    logger.info { "result: #{result}" }
+    # logger.info { "result: #{result}" }
     render :text => result
   end
   
