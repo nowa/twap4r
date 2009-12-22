@@ -1,0 +1,99 @@
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-12-22 11:40:52) [GET]
+Rendering welcome/index
+Completed in 164ms (View: 162, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-12-22 11:41:07) [GET]
+Rendering welcome/index
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-12-22 11:41:13) [GET]
+Rendering welcome/index
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-12-22 11:41:49) [GET]
+Rendering welcome/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-12-22 12:05:07) [GET]
+
+NameError (uninitialized constant ApplicationController::TwitterOAuth):
+  app/controllers/application_controller.rb:16:in `oauth'
+
+Rendered rescues/_trace (79.7ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-12-22 12:05:48) [GET]
+
+NameError (uninitialized constant ApplicationController::TwitterOAuth):
+  app/controllers/application_controller.rb:5
+  app/controllers/welcome_controller.rb:1
+
+Rendered rescues/_trace (87.1ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-12-22 12:05:49) [GET]
+
+NameError (uninitialized constant ApplicationController::TwitterOAuth):
+  app/controllers/application_controller.rb:5
+  app/controllers/welcome_controller.rb:1
+
+Rendered rescues/_trace (32.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-12-22 12:06:47) [GET]
+
+NameError (uninitialized constant ApplicationController::TwitterOAuth):
+  app/controllers/application_controller.rb:5
+  app/controllers/welcome_controller.rb:1
+
+Rendered rescues/_trace (85.7ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-12-22 12:06:48) [GET]
+
+NameError (uninitialized constant ApplicationController::TwitterOAuth):
+  app/controllers/application_controller.rb:5
+  app/controllers/welcome_controller.rb:1
+
+Rendered rescues/_trace (31.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-12-22 12:06:48) [GET]
+
+NameError (uninitialized constant ApplicationController::TwitterOAuth):
+  app/controllers/application_controller.rb:5
+  app/controllers/welcome_controller.rb:1
+
+Rendered rescues/_trace (33.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-12-22 12:27:13) [GET]
+
+NameError (undefined local variable or method `oauth_confirm_url' for #<WelcomeController:0x1031f2760>):
+  app/controllers/application_controller.rb:22:in `oauth'
+
+Rendered rescues/_trace (82.4ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-12-22 12:30:24) [GET]
+oauth_confirm_url
