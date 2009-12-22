@@ -305,3 +305,78 @@ ActionView::MissingTemplate (Missing template api/welcome/index.erb in view path
   app/controllers/api/welcome_controller.rb:4:in `index'
 
 Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-23 02:50:39) [GET]
+
+ActionController::RoutingError (No route matches "/api/dispatch" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Tapi::WelcomeController#index (for 127.0.0.1 at 2009-12-23 02:50:42) [GET]
+request: /tapi/dispatch
+ori: 
+
+ActionView::MissingTemplate (Missing template tapi/welcome/index.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Tapi::WelcomeController#index (for 127.0.0.1 at 2009-12-23 03:06:30) [GET]
+  Parameters: {"ori"=>"/api/dsf/sdf?count=10"}
+request: /tapi/dispatch
+ori: /api/dsf/sdf?count=10
+
+ActionView::MissingTemplate (Missing template tapi/welcome/index.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Tapi::WelcomeController#index (for 127.0.0.1 at 2009-12-23 03:14:50) [GET]
+  Parameters: {"ori"=>"/api/dsf/sdf?count=10"}
+request: /tapi/dispatch
+ori: /api/dsf/sdf?count=10
+
+ActionView::MissingTemplate (Missing template tapi/welcome/index.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Tapi::WelcomeController#index (for 127.0.0.1 at 2009-12-23 03:20:12) [GET]
+  Parameters: {"ori"=>"/api/dsf/sdf?count=10"}
+request: /tapi/dispatch
+ori: /api/dsf/sdf?count=10
+
+ActionView::MissingTemplate (Missing template tapi/welcome/index.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Tapi::WelcomeController#index (for 127.0.0.1 at 2009-12-23 03:20:50) [GET]
+  Parameters: {"ori"=>"/api/dsf/sdf?count=10"}
+request: /tapi/dispatch
+ori: /api/dsf/sdf?count=10
+p: action=index&ori=/api/dsf/sdf?count=10&controller=tapi/welcome
+
+ActionView::MissingTemplate (Missing template tapi/welcome/index.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Tapi::WelcomeController#index (for 127.0.0.1 at 2009-12-23 03:21:32) [GET]
+  Parameters: {"ori"=>"/api/dsf/sdf?count=10"}
+request: /tapi/dispatch
+ori: /api/dsf/sdf?count=10
+p: ori=/api/dsf/sdf?count=10
+
+ActionView::MissingTemplate (Missing template tapi/welcome/index.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
