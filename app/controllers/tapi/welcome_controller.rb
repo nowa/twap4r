@@ -14,13 +14,14 @@ class Tapi::WelcomeController < ApplicationController
       basic_auth = "#{username}:#{password}@"
     end
     
+    logger.info { "p: #{hash_to_querystring(params)}" }
+    
     if request.post?
-      logger.info { "p: #{hash_to_querystring(params)}" }
       result = `curl -d "#{hash_to_querystring(params)}" http://#{basic_auth}twitter.com/#{ori}`
       logger.info { "curl: curl -d \"#{hash_to_querystring(params)}\" http://#{basic_auth}twitter.com/#{ori}" }
     else
-      result = `curl http://#{basic_auth}twitter.com/#{ori}`
-      logger.info { "curl: curl http://#{basic_auth}twitter.com/#{ori}" }
+      result = `curl http://#{basic_auth}twitter.com/#{ori}?#{hash_to_querystring(params)}`
+      logger.info { "curl: curl http://#{basic_auth}twitter.com/#{ori}?#{hash_to_querystring(params)}" }
     end
     
     logger.info { "result: #{result}" }
