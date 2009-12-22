@@ -31,8 +31,8 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   # api
-  map.namespace :api do |api|
-    api.dispatch 'dispatch', :controller => "welcome", :action => "index"
+  map.namespace :tapi do |tapi|
+    tapi.dispatch 'dispatch', :controller => "welcome", :action => "index"
     # api.connect 'account/verify_credentials', :controller => "welcome", :action => "index"
     # api.connect 'account/verify_credentials.:format', :controller => "welcome", :action => "index"
   end

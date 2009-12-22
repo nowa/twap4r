@@ -1,0 +1,2 @@
+module Tapi::WelcomeHelper
+end
