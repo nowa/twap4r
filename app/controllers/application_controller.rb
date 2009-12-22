@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
     def oauth
       @authorized = false
       @config_file = "#{RAILS_ROOT}/config/oauth.yml"
-      @config = YAML::load(File.read(config_file))
+      @config = YAML::load(File.read(@config_file))
       consumer_key = @config['oauth']['consumer_key']
       consumer_secret = @config['oauth']['consumer_secret']
       request_token = @config['oauth']['request_token']
